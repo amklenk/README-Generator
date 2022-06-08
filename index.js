@@ -1,7 +1,9 @@
 // TODO: Include packages needed for this application
-var inquire = require("inquire");
+var inquirer = require("inquirer");
+var fs = require("fs");
 
 // TODO: Create an array of questions for user input
+console.log("Hello Node!");
 const questions = [];
 
 // TODO: Create a function to write README file
