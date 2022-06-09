@@ -6,8 +6,7 @@ const generateMarkdown = require("./utils/generateMarkdown");
 
 // TODO: Create an array of questions for user input
 //is this just an array and inquirer goes in the init function?
-const questions = (data) =>{
-    inquirer.prompt(
+const questions =
 [
     {
      type: "input",
@@ -104,8 +103,7 @@ const questions = (data) =>{
         name: "contribution",
         message: "Is there a way that another programmer can contribute?"
     }
-])
-};
+];
 
 // TODO: Create a function to write README file
 //This is like the generate-site.js
@@ -129,14 +127,14 @@ function writeToFile(fileName, data) {
 
 // TODO: Create a function to initialize app
 //not sure what this is? Page load, Are we putting the questions in one function and then putting inquirer here using bracket notation?
-// function init() {
-    // inquirer.prompt(questions);
-// }
+function init() {
+    inquirer.prompt(questions);
+}
 
 // Function call to initialize app is this where the promises go?
-// init();
+init();
 
-questions()
+
 //   .then(pageMD => {
 //     return writeToFile(pageMD);
 //   })
