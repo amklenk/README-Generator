@@ -1,22 +1,148 @@
 // TODO: Include packages needed for this application
 var inquirer = require("inquirer");
 var fs = require("fs");
-var generateMarkdown = require ("./utils/generateMarkdown.js");
+const generateMarkdown = require("./utils/generateMarkdown");
+// var generateMarkdown = require ("./utils/generateMarkdown.js");
 
 // TODO: Create an array of questions for user input
-const questions = ["What is the title of your project?",
-"Can you give a short description of why you build this project and any problems it solves?",
-"What are the steps required to install your project?",
-"How do you use your project?",
-"Do you have any collaborators or third-party assets? List their names here.",
- "Which license would you like to use?",
-"Is there a way that another programmer can contribute?"];
+//is this just an array and inquirer goes in the init function?
+const questions = (data) =>{
+    inquirer.prompt(
+[
+    {
+     type: "input",
+     name: "title",
+     message: "What is the title of your project? (Required)",
+     validate: titleInput => {
+         if(titleInput) {
+             return true;
+         } else {
+             console.log("Please enter the title of your project!");
+             return false;
+         }
+     }
+    },
+    {
+        type: "input",
+        name: "description",
+        message: "Please give a short description of why you built this project and any problems it solves. (Required)",
+        validate: descriptionInput => {
+            if(descriptionInput) {
+                return true;
+            } else {
+                console.log("Please enter a short description of your project!");
+                return false;
+            }
+        }
+    },
+    {
+        type: "input",
+        name: "steps",
+        message: "What are the steps required to install your project? (Required)",
+        validate: stepsInput => {
+            if(stepsInput) {
+                return true;
+            } else {
+                console.log("Please enter the steps a user needs to take to install your project!");
+                return false;
+            }
+        }
+    },
+    {
+        type: "input",
+        name: "github",
+        message: "What is the url of the GitHub repository for this project? (Required)",
+        validate: githubInput => {
+            if(githubInput) {
+                return true;
+            } else {
+                console.log("Please enter the url of your project's repository!");
+                return false;
+            }
+        }
+    },
+    {
+        type: "input",
+        name: "site",
+        message: "What is the url of your project's live site (if there is one)?"
+    },
+    {
+        type: "input",
+        name: "usage",
+        message: "How do you use your project? (Required)",
+        validate: usageInput => {
+            if(usageInput) {
+                return true;
+            } else {
+                console.log("Please enter the usage of your project!");
+                return false;
+            }
+        }
+    },
+    {
+        type: "input",
+        name: "collaborators",
+        message: "Please list any collaborators on your project or third-party assets you used.",
+    },
+    {
+        //Is this one optional? Hence the empty string
+        type: "list",
+        name: "license",
+        message: "Which license would you like to use?",
+        choices:["MIT", "ISC", "Apache", "BSD", "GNU"],
+        validate: licenseInput => {
+            if(licenseInput) {
+                return true;
+            } else {
+                console.log("Please choose one license for your project!");
+                return false;
+            }
+        }
+    },
+    {
+        type: "input",
+        name: "contribution",
+        message: "Is there a way that another programmer can contribute?"
+    }
+])
+};
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+//This is like the generate-site.js
+//where do I put that it's a .md? Need to work more on this.
+function writeToFile(fileName, data) {
+    return new Promise((resolve, reject) =>{
+        //does this make sense? fileName isn't exactly a pathway...
+        fs.writeFile(fileName, data, err=>{
+            if (err){
+                reject(err);
+                return;
+            }
+            //if resolves, send successful data to then method
+            resolve({
+                ok: true,
+                message:"File created!"
+            });
+        });
+    });
+};
 
 // TODO: Create a function to initialize app
-function init() {}
+//not sure what this is? Page load, Are we putting the questions in one function and then putting inquirer here using bracket notation?
+// function init() {
+    // inquirer.prompt(questions);
+// }
 
-// Function call to initialize app
-init();
+// Function call to initialize app is this where the promises go?
+// init();
+
+questions()
+//   .then(pageMD => {
+//     return writeToFile(pageMD);
+//   })
+    // .then((data) =>{
+    //     return generateMarkdown(data);
+    // })
+//   .catch(err => {
+//     console.log(err);
+//   });
