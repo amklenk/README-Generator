@@ -1,5 +1,6 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 function renderLicenseBadge(license) {
+  var license = data.license;
   if (!license) {
     return " "
   }
@@ -28,6 +29,7 @@ function renderLicenseBadge(license) {
 
 // TODO: Create a function that returns the license link
 function renderLicenseLink(license) {
+  var license = data.license;
   if (!license) {
     return " "
   }
@@ -57,6 +59,7 @@ function renderLicenseLink(license) {
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
+  var license = data.license;
   if (!license) {
     return " "
   }
@@ -99,7 +102,7 @@ function generateMarkdown(data) {
   - ${data.collaborators}
 
   ## License
-  ${renderLicenseSection(license)}
+  // ${renderLicenseSection(license)}
 
   ## How to Contribute
   ${data.contribution}

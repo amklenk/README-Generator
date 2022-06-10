@@ -97,10 +97,10 @@ const questions =
 
 // TODO: Create a function to write README file
 //function that writes the file
-function writeToFile(data) {
+function writeToFile(fileName, data) {
     return new Promise((resolve, reject) =>{
         //does this make sense? fileName isn't exactly a pathway...
-        fs.writeFile("./src/README.md", data, err=>{
+        fs.writeFile("./src/" + fileName, data, err=>{
             if (err){
                 reject(err);
                 return;
@@ -117,17 +117,20 @@ function writeToFile(data) {
 // TODO: Create a function to initialize app
 //function that deploys inquirer
 function init() {
-    inquirer.prompt(questions);
-}
-
-// Promise chain
-init()
-  .then(pageMD => {
-    return writeToFile(pageMD);
-  })
-    .then((data) =>{
-        return generateMarkdown(data);
+    inquirer.prompt(questions)
+    .then(answers=> {
+        console.log(answers);
+        return generateMarkdown(answers);
     })
-  .catch(err => {
+    .then((answers)=>{
+        var data = JSON.stringify(answers, null, '\t');
+        var fileName = data.name + "README.md";
+        return writeToFile(fileName, data);
+    })
+.catch(err => {
     console.log(err);
   });
+}
+
+// function call
+init();
