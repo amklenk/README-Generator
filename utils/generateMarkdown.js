@@ -1,24 +1,23 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 function renderLicenseBadge(license) {
-  license = data.license;
-  if (!data.license) {
+  if (!license) {
     return " ";
   }
-  if (data.license == "MIT") {
+  if (license === "MIT") {
     return `
    [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
   `;
-  } else if (license == "ISC") {
+  } else if (license === "ISC") {
     return `
     [![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
     `;
-  } else if (license == "Apache") {
+  } else if (license === "APACHE 2.0") {
     return `
-    [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+    [![License: Apache](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
     `;
-  } else if (license == "BSD") {
+  } else if (license === "BSD") {
     return `
-    [![License](https://img.shields.io/badge/License-BSD_2--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)
+    [![License: BSD](https://img.shields.io/badge/License-BSD_2--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)
     `;
   } else {
     return `
@@ -29,7 +28,6 @@ function renderLicenseBadge(license) {
 
 // TODO: Create a function that returns the license link
 function renderLicenseLink(license) {
-  var license = data.license;
   if (!license) {
     return " ";
   }
@@ -41,7 +39,7 @@ function renderLicenseLink(license) {
     return `
      [License: ISC](https://opensource.org/licenses/ISC)
      `;
-  } else if (license === "Apache") {
+  } else if (license === "APACHE 2.0") {
     return `
      [License](https://opensource.org/licenses/Apache-2.0)
      `;
@@ -59,13 +57,12 @@ function renderLicenseLink(license) {
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-  var license = data.license;
   if (!license) {
     return " ";
   }
   return `
-  ${renderLicenseBadge(license)}
-  ${renderLicenseLink(license)}
+${renderLicenseBadge(license)}
+- ${renderLicenseLink(license)}
   `;
 }
 
@@ -87,7 +84,9 @@ ${readme.description}
 - [Usage](#usage)
 - [Credits](#credits)
 - [License](#license)
-- [How-to-Contribute](#how-to-contribute)
+- [How to Contribute](#how-to-contribute)
+- [Tests])(#tests)
+- [Questions](#questions)
   
 ## Installation
 ${readme.steps}
@@ -101,9 +100,17 @@ ${readme.usage}
   
 ## Credits
 - ${readme.collaborators}
-  
+
+## License
+${renderLicenseSection(license)}
+
 ## How to Contribute
-${readme.contribution}
+${readme.contribution} 
+
+## Tests
+
+## Questions
+Please direct any questions to ${readme.email}. To see more projects, find ${readme.name} on GitHub.
 `;
 }
 

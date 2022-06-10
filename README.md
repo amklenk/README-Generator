@@ -1,4 +1,8 @@
 # README-Generator
+
+## Description
+
+
 When creating an open source project on GitHub, it’s important to have a high-quality README for the app. This should include what the app is for, how to use the app, how to install it, how to report issues, and how to make contributions—this last part increases the likelihood that other developers will contribute to the success of the project.
 
 AS A developer
@@ -7,7 +11,10 @@ SO THAT I can quickly create a professional README for a new project
 
 GIVEN a command-line application that accepts user input
 WHEN I am prompted for information about my application repository
-THEN a high-quality, professional README.md is generated with the title of my project and sections entitled Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions
+THEN a high-quality, professional README.md is generated with the title of my project and sections entitled Description, Table of Contents, Installation, Usage, License, Contributing, 
+
+//npm test for test commands
+Tests, and Questions
 WHEN I enter my project title
 THEN this is displayed as the title of the README
 WHEN I enter a description, installation instructions, usage information, contribution guidelines, and test instructions
@@ -32,10 +39,10 @@ badge
 
 title: 'Workout-Zen',
   description: 'A workout application for a newbie exerciser.',
-  steps: 'Go to the repository site, fork, and clone it to your system.',
+  steps: 'Visit the GitHub repository, Workout-Zen (see the link below), to fork and clone the repository. The JSON file will have the necessary dependencies. The .gitignore file is set up in the root directory along with the index.js file that contains most of the command line code. The utils folder contains the generateMarkdown file, which contains the template for the README file and the module_export to index.js. The dist folder will contain the generated README.',
   github: 'https://github.com/amklenk/Workout-Zen',
   site: 'https://amklenk.github.io/Workout-Zen/',
-  usage: 'The site is navigable via clicking the muscle buttons, each exercise, and the go back button.',
+  usage: 'The site is navigable via clicking the muscle buttons, each exercise, and the go back button to return to the index page. Each exercise has a heart, which when clicked, allows the user to save the exercise as a favorite to the favorite's section using local storage. The user can then press the clear button to clear the exercises and local storage.',
   collaborators: 'Mtende Roll, Hannah Nicks, Colin Alexander',
   license: 'MIT',
   contribution: 'Fork the repository and use a pull request.'

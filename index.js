@@ -8,6 +8,19 @@ var generateMarkdown = require("./utils/generateMarkdown.js");
 const questions =
 [
     {
+        type: "input",
+        name: "name",
+        message: "What is your GitHub username? (Required)",
+        validate: nameInput => {
+            if(nameInput) {
+                return true;
+            } else {
+                console.log("Please enter your username on GitHub!");
+                return false;
+            } 
+        }
+    },
+    {
      type: "input",
      name: "title",
      message: "What is the title of your project? (Required)",
@@ -87,12 +100,33 @@ const questions =
         name: "license",
         message: "Which license would you like to use?",
         //add in none as a choice
-        choices:["MIT", "ISC", "Apache", "BSD", "GNU"],
+        choices:["MIT", "ISC", "APACHE 2.0", "BSD", "GPL 3.0"],
     },
     {
         type: "input",
         name: "contribution",
-        message: "Is there a way that another programmer can contribute?"
+        message: "Is there a way that another programmer can contribute? (Required)",
+        validate: contributionInput => {
+            if(contributionInput) {
+                return true;
+            } else {
+                console.log("Please enter how other programmers can contribute to your project!");
+                return false;
+            }
+        }
+    },
+    {
+        type: "input",
+        name: "email",
+        message: "Please provide your email address. (Required)",
+        validate: emailInput => {
+            if(emailInput) {
+                return true;
+            } else {
+                console.log("Please enter the usage of your project!");
+                return false;
+            }
+        }
     }
 ];
 
@@ -120,12 +154,12 @@ function writeToFile(fileName, data) {
 function init() {
     inquirer.prompt(questions)
     .then(answers=> {
-        console.log(answers);
         return generateMarkdown(answers);
     })
     .then((answers)=>{
         var data = answers;
         var fileName = "README.md";
+        console.log("Your README has been created in the dist folder!")
         return writeToFile(fileName, data);
     })
 .catch(err => {
