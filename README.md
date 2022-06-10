@@ -27,3 +27,15 @@ Office Hours Questions:
 1. Array vs. inquirer function - FIXED
 2. Are the licenses optional? How to make that optional in MD
 3. Badge vs. site link
+This is licensed with: 
+badge
+
+title: 'Workout-Zen',
+  description: 'A workout application for a newbie exerciser.',
+  steps: 'Go to the repository site, fork, and clone it to your system.',
+  github: 'https://github.com/amklenk/Workout-Zen',
+  site: 'https://amklenk.github.io/Workout-Zen/',
+  usage: 'The site is navigable via clicking the muscle buttons, each exercise, and the go back button.',
+  collaborators: 'Mtende Roll, Hannah Nicks, Colin Alexander',
+  license: 'MIT',
+  contribution: 'Fork the repository and use a pull request.'

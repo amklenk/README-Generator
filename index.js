@@ -86,6 +86,7 @@ const questions =
         type: "list",
         name: "license",
         message: "Which license would you like to use?",
+        //add in none as a choice
         choices:["MIT", "ISC", "Apache", "BSD", "GNU"],
     },
     {
@@ -100,7 +101,7 @@ const questions =
 function writeToFile(fileName, data) {
     return new Promise((resolve, reject) =>{
         //does this make sense? fileName isn't exactly a pathway...
-        fs.writeFile("./src/" + fileName, data, err=>{
+        fs.writeFile("./dist/" + fileName, data, err=>{
             if (err){
                 reject(err);
                 return;
@@ -123,8 +124,8 @@ function init() {
         return generateMarkdown(answers);
     })
     .then((answers)=>{
-        var data = JSON.stringify(answers, null, '\t');
-        var fileName = data.name + "README.md";
+        var data = answers;
+        var fileName = "README.md";
         return writeToFile(fileName, data);
     })
 .catch(err => {
