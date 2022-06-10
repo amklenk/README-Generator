@@ -1,11 +1,10 @@
 // TODO: Include packages needed for this application
 var inquirer = require("inquirer");
 var fs = require("fs");
-const generateMarkdown = require("./utils/generateMarkdown");
-// var generateMarkdown = require ("./utils/generateMarkdown.js");
+var generateMarkdown = require("./utils/generateMarkdown.js");
 
 // TODO: Create an array of questions for user input
-//is this just an array and inquirer goes in the init function?
+//an array of the questions to feed through inquirer.prompt
 const questions =
 [
     {
@@ -84,19 +83,10 @@ const questions =
         message: "Please list any collaborators on your project or third-party assets you used.",
     },
     {
-        //Is this one optional? Hence the empty string
         type: "list",
         name: "license",
         message: "Which license would you like to use?",
         choices:["MIT", "ISC", "Apache", "BSD", "GNU"],
-        validate: licenseInput => {
-            if(licenseInput) {
-                return true;
-            } else {
-                console.log("Please choose one license for your project!");
-                return false;
-            }
-        }
     },
     {
         type: "input",
@@ -106,12 +96,11 @@ const questions =
 ];
 
 // TODO: Create a function to write README file
-//This is like the generate-site.js
-//where do I put that it's a .md? Need to work more on this.
-function writeToFile(fileName, data) {
+//function that writes the file
+function writeToFile(data) {
     return new Promise((resolve, reject) =>{
         //does this make sense? fileName isn't exactly a pathway...
-        fs.writeFile(fileName, data, err=>{
+        fs.writeFile("./src/README.md", data, err=>{
             if (err){
                 reject(err);
                 return;
@@ -126,21 +115,19 @@ function writeToFile(fileName, data) {
 };
 
 // TODO: Create a function to initialize app
-//not sure what this is? Page load, Are we putting the questions in one function and then putting inquirer here using bracket notation?
+//function that deploys inquirer
 function init() {
     inquirer.prompt(questions);
 }
 
-// Function call to initialize app is this where the promises go?
-init();
-
-
-//   .then(pageMD => {
-//     return writeToFile(pageMD);
-//   })
-    // .then((data) =>{
-    //     return generateMarkdown(data);
-    // })
-//   .catch(err => {
-//     console.log(err);
-//   });
+// Promise chain
+init()
+  .then(pageMD => {
+    return writeToFile(pageMD);
+  })
+    .then((data) =>{
+        return generateMarkdown(data);
+    })
+  .catch(err => {
+    console.log(err);
+  });

@@ -24,6 +24,6 @@ THEN I am taken to the corresponding section of the README
 Repository contains a high-quality README with description and a link to walkthrough video.
 
 Office Hours Questions: 
-1. Array vs. inquirer function
+1. Array vs. inquirer function - FIXED
 2. Are the licenses optional? How to make that optional in MD
 3. Badge vs. site link
