@@ -99,8 +99,8 @@ ${readme.contribution}
 To test the functionality of the site, please use ${readme.test}.
 
 ## Questions
-Please direct any questions to ${readme.email}. To see more projects, visit the link below: 
-- [GitHub Repository for ${readme.name}](https://github.com/${readme.name}).
+Please direct any questions to ${readme.email}. To see more projects, visit the link below for ${readme.name}'s respository: 
+- [GitHub Repository](https://github.com/${readme.name})
 `;
 }
 

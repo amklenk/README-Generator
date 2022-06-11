@@ -1,4 +1,4 @@
-# README-Generator
+# README-Generator   ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 ## Description
 
@@ -9,37 +9,53 @@ The following were the requirements of the project:
 * When the user chooses a license, the badge is shown at the top of the page and link for the license and a quick explanation will be displayed in the corresponding section of the README.
 * When the user enters their GitHub username, it is shown in the Questions section along with a link to their repository on GitHub.
 * When the user enters their email address, this is shown in the Questions section as a way for communication and further questions. 
-* When the user clicks on the links in the Table of Contents, each link takes them to the 
+* When the user clicks on the links in the Table of Contents, each link takes them to the corresponding section of the README.
 
+## Table of Contents
+- [Installation](#installation)
+- [Links](#links)
+- [Usage](#usage)
+- [Credits](#credits)
+- [License](#license)
+- [How to Contribute](#how-to-contribute)
+- [Questions](#questions)
 
-WHEN I choose a license for my application from a list of options
-THEN a badge for that license is added near the top of the README and a notice is added to the section of the README entitled License that explains which license the application is covered under
-WHEN I enter my GitHub username
-THEN this is added to the section of the README entitled Questions, with a link to my GitHub profile
-WHEN I enter my email address
-THEN this is added to the section of the README entitled Questions, with instructions on how to reach me with additional questions
-WHEN I click on the links in the Table of Contents
-THEN I am taken to the corresponding section of the README
+## Installation
+Visit the GitHub repository, README-Generator (see the link below), to fork and clone the repository. The JSON file will have the necessary dependencies. Use:
+````````````
+npm install
+````````````
+The .gitignore file is set up in the root directory along with the index.js file that contains most of the command line code. The utils folder contains the generateMarkdown file, which contains the template for the README file and the module_export to index.js. The dist folder will contain the generated README.
 
-Repository contains a high-quality README with description and a link to walkthrough video.
+## Links
+- [GitHub Repository](https://github.com/amklenk/README-Generator)
 
-Office Hours Questions: 
-1. Array vs. inquirer function - FIXED
-2. Are the licenses optional? How to make that optional in MD
-3. Badge vs. site link
-This is licensed with: 
-badge
+## Usage
+The application is navigable via opening the index.js file in an integrated terminal. All of the user data is entered using Inquirer prompts. The user will receive a message to let them know that the README file is ready. The generated file will appear in the dist folder.
 
+## Credits
+The license badges and links were obtained from the following repository:
+- [GitHub Gist Repository for lukas-h](https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba)
+
+## License
+The badge at the top of the page shows that this project is licensed under MIT. The link for that license is shown below.
+- [License: MIT](https://opensource.org/licenses/MIT)
+## How to Contribute
+Please fork and clone the repository and use a pull request to add or make changes to the current repository.
+
+## Questions
+Please direct any questions to amandamklenk3@gmail.com. To see more projects, visit the link below for amklenk's respository: 
+- [GitHub Repository](https://github.com/amklenk)
+
+Inquirer Data
 name: 'amklenk',
 title: 'Workout Zen',
   description: 'This application was designed to help someone new to exercising learn new exercises in a low stress environment.',
-  steps: 'Visit the GitHub repository, Workout-Zen (see the link below), to fork and clone the repository. The JSON file will have the necessary dependencies. The .gitignore file is set up in the root directory along with the index.js file that contains most of the command line code. The utils folder contains the generateMarkdown file, which contains the template for the README file and the module_export to index.js. The dist folder will contain the generated README.',
+  steps: 'Visit the GitHub repository, Workout-Zen (see the link below), to fork and clone the repository. The site is published on GitHub pages',
   github: 'https://github.com/amklenk/Workout-Zen',
   site: 'https://amklenk.github.io/Workout-Zen/',
   usage: 'The site is navigable via clicking the muscle buttons, each exercise, and the go back button to return to the index page. Each exercise has a heart, which when clicked, allows the user to save the exercise as a favorite to the favorite's section using local storage. The user can then press the clear button to clear the exercises and local storage.',
   collaborators: 'Mtende Roll, Hannah Nicks, Colin Alexander',
   license: 'MIT',
-  contribution: 'Fork the repository and use a pull request.'
+  contribution: 'Please fork and clone the repository and use a pull request to add or make changes to the current repository.'
   email: 'amandamklenk3@gmail.com'
-
-![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)
