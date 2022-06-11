@@ -5,23 +5,23 @@ function renderLicenseBadge(license) {
   }
   if (license === "MIT") {
     return `
-   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+  ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
   `;
   } else if (license === "ISC") {
     return `
-    [![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
+  ![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)
     `;
   } else if (license === "APACHE 2.0") {
     return `
-    [![License: Apache](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+  ![License: Apache](https://img.shields.io/badge/License-Apache_2.0-blue.svg)
     `;
   } else if (license === "BSD") {
     return `
-    [![License: BSD](https://img.shields.io/badge/License-BSD_2--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)
+  ![License: BSD](https://img.shields.io/badge/License-BSD_2--Clause-orange.svg)
     `;
   } else {
     return `
-    [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+  ![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)
     `;
   }
 }
@@ -32,25 +32,15 @@ function renderLicenseLink(license) {
     return " ";
   }
   if (license === "MIT") {
-    return `
-    [License: MIT](https://opensource.org/licenses/MIT)
-   `;
+    return `[License: MIT](https://opensource.org/licenses/MIT)`;
   } else if (license === "ISC") {
-    return `
-     [License: ISC](https://opensource.org/licenses/ISC)
-     `;
+    return `[License: ISC](https://opensource.org/licenses/ISC)`;
   } else if (license === "APACHE 2.0") {
-    return `
-     [License](https://opensource.org/licenses/Apache-2.0)
-     `;
+    return `[License](https://opensource.org/licenses/Apache-2.0)`;
   } else if (license === "BSD") {
-    return `
-     [License](https://opensource.org/licenses/BSD-2-Clause)
-     `;
+    return `[License](https://opensource.org/licenses/BSD-2-Clause)`;
   } else {
-    return `
-     [License: GPL v3](https://www.gnu.org/licenses/gpl-3.0)
-     `;
+    return `[License: GPL v3](https://www.gnu.org/licenses/gpl-3.0)`;
   }
 }
 
@@ -60,10 +50,8 @@ function renderLicenseSection(license) {
   if (!license) {
     return " ";
   }
-  return `
-${renderLicenseBadge(license)}
-- ${renderLicenseLink(license)}
-  `;
+  return `The badge at the top of the page shows that this project is licensed under ${license}. The link for that license is shown below.
+- ${renderLicenseLink(license)}`;
 }
 
 // TODO: Create a function to generate markdown for README
@@ -73,7 +61,7 @@ function generateMarkdown(data) {
 
   return `
 
-# Project Title - ${readme.title}
+# ${readme.title}    ${renderLicenseBadge(license)}
 
 ## Description
 ${readme.description}
@@ -85,7 +73,7 @@ ${readme.description}
 - [Credits](#credits)
 - [License](#license)
 - [How to Contribute](#how-to-contribute)
-- [Tests])(#tests)
+- [Tests](#tests)
 - [Questions](#questions)
   
 ## Installation
@@ -99,7 +87,7 @@ ${readme.steps}
 ${readme.usage}
   
 ## Credits
-- ${readme.collaborators}
+- Collaborators: ${readme.collaborators}
 
 ## License
 ${renderLicenseSection(license)}
@@ -108,9 +96,11 @@ ${renderLicenseSection(license)}
 ${readme.contribution} 
 
 ## Tests
+To test the functionality of the site, please use ${readme.test}.
 
 ## Questions
-Please direct any questions to ${readme.email}. To see more projects, find ${readme.name} on GitHub.
+Please direct any questions to ${readme.email}. To see more projects, visit the link below: 
+- [GitHub Repository for ${readme.name}](https://github.com/${readme.name}).
 `;
 }
 

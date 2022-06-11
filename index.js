@@ -93,14 +93,13 @@ const questions =
     {
         type: "input",
         name: "collaborators",
-        message: "Please list any collaborators on your project or third-party assets you used.",
+        message: "Please list any collaborators on your project.",
     },
     {
         type: "list",
         name: "license",
         message: "Which license would you like to use?",
-        //add in none as a choice
-        choices:["MIT", "ISC", "APACHE 2.0", "BSD", "GPL 3.0"],
+        choices:["MIT", "ISC", "APACHE 2.0", "BSD", "GPL 3.0"]
     },
     {
         type: "input",
@@ -114,6 +113,12 @@ const questions =
                 return false;
             }
         }
+    },
+    {
+        type: "list",
+        name: "test",
+        message: "Which of the following would someone use to test your site?",
+        choices:["Jest", "Turbo Data", "Grunt", "Mocha", "Karma"]
     },
     {
         type: "input",
