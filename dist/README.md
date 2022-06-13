@@ -18,7 +18,7 @@ This application was designed to help someone new to exercising learn new exerci
 Visit the GitHub repository, Workout-Zen (see the link below), to fork and clone the repository. The site is published on GitHub pages.
 ## Links
 - [GitHub Repository](https://github.com/amklenk/Workout-Zen)
-- [Page Link](https://amklenk.github.io/Workout-Zen/)
+- [Page Link](https://amklenk.github.io/Workout-Zen)
     
 ## Usage
 The site is navigable via clicking the muscle buttons, each exercise, and the go back button to return to the index page. Each exercise has a heart, which when clicked, allows the user to save the exercise as a favorite to the favorite section using local storage. The user can then press the clear button to clear the exercises and local storage.

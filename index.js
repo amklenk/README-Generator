@@ -1,9 +1,24 @@
-// TODO: Include packages needed for this application
+//requirements
 var inquirer = require("inquirer");
 var fs = require("fs");
 var generateMarkdown = require("./utils/generateMarkdown.js");
 
-// TODO: Create an array of questions for user input
+//mockData object to append template for generated file (for development)
+const mockData = {
+name: "amklenk",
+title: "Workout Zen",
+description: "This application was designed to help someone new to exercising learn new exercises in a low stress environment.",
+steps: "Visit the GitHub repository, Workout-Zen (see the link below), to fork and clone the repository. The site is published on GitHub pages.",
+github: "https://github.com/amklenk/Workout-Zen",
+site: "https://amklenk.github.io/Workout-Zen",
+usage: "The site is navigable via clicking the muscle buttons, each exercise, and the go back button to return to the index page. Each exercise has a heart, which when clicked, allows the user to save the exercise as a favorite to the favorite section using local storage. The user can then press the clear button to clear the exercises and local storage.",
+collaborators: "Mtende Roll, Hannah Nicks, Colin Alexander",
+license: "MIT",
+contribution: "Please fork and clone the repository and use a pull request to add or make changes to the current repository.",
+test: "Mocha",
+email: "amandamklenk3@gmail.com"
+};
+
 //an array of the questions to feed through inquirer.prompt
 const questions =
 [
@@ -129,7 +144,6 @@ const questions =
     }
 ];
 
-// TODO: Create a function to write README file
 //function that writes the file
 function writeToFile(fileName, data) {
     return new Promise((resolve, reject) =>{
@@ -148,8 +162,7 @@ function writeToFile(fileName, data) {
     });
 };
 
-// TODO: Create a function to initialize app
-//function that deploys inquirer
+//function that deploys inquirer and uses promise chain to send the answers to generateMarkdown and writeToFile
 function init() {
     inquirer.prompt(questions)
     .then(answers => {
@@ -162,3 +175,6 @@ function init() {
 
 // function call
 init();
+
+//Function to use mockData
+// writeToFile("README.md", generateMarkdown(mockData));

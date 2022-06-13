@@ -1,4 +1,4 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
+//function to render the license badge
 function renderLicenseBadge(license) {
   if (!license) {
     return " ";
@@ -26,7 +26,7 @@ function renderLicenseBadge(license) {
   }
 }
 
-// TODO: Create a function that returns the license link
+//function to render the license link
 function renderLicenseLink(license) {
   if (!license) {
     return " ";
@@ -44,8 +44,7 @@ function renderLicenseLink(license) {
   }
 }
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
+//function to render the license section with explanation and link
 function renderLicenseSection(license) {
   if (!license) {
     return " ";
@@ -54,6 +53,7 @@ function renderLicenseSection(license) {
 - ${renderLicenseLink(license)}`;
 }
 
+//function to render the site link, if the user enters one
 function renderPageLink(site) {
   if (site === " ") {
     return " "
@@ -63,8 +63,7 @@ function renderPageLink(site) {
   }
 }
 
-// TODO: Create a function to generate markdown for README
-//this is like the template.js in portfolio-generator
+//function that contains the template for the markdown file and generates markdown within the created file
 function generateMarkdown(data) {
 var readme = data;
   return `
@@ -102,4 +101,5 @@ Please direct any questions to ${readme.email}. To see more projects, visit the 
 `;
 }
 
+//export
 module.exports = generateMarkdown;
