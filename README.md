@@ -60,6 +60,8 @@ Please fork and clone the repository and use a pull request to add or make chang
 Please direct any questions to amandamklenk3@gmail.com. To see more projects, visit the link below for amklenk's respository: 
 - [GitHub Repository](https://github.com/amklenk)
 
+
+
 Inquirer Data
 name: 'amklenk',
 title: 'Workout Zen',

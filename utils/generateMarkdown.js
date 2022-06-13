@@ -70,10 +70,8 @@ var readme = data;
   return `
 
 # ${readme.title}    ${renderLicenseBadge(readme.license)}
-
 ## Description
 ${readme.description}
-  
 ## Table of Contents
 - [Installation](#installation)
 - [Links](#links)
@@ -83,29 +81,21 @@ ${readme.description}
 - [How to Contribute](#how-to-contribute)
 - [Tests](#tests)
 - [Questions](#questions)
-  
 ## Installation
 ${readme.steps}
-  
 ## Links
 - [GitHub Repository](${readme.github})
 ${renderPageLink(readme.site)}
-  
 ## Usage
 ${readme.usage}
-  
 ## Credits
 - Collaborators: ${readme.collaborators}
-
 ## License
 ${renderLicenseSection(readme.license)}
-
 ## How to Contribute
-${readme.contribution} 
-
+${readme.contribution}
 ## Tests
 To test the functionality of the site, please use ${readme.test}.
-
 ## Questions
 Please direct any questions to ${readme.email}. To see more projects, visit the link below for ${readme.name}'s respository: 
 - [GitHub Repository](https://github.com/${readme.name})
