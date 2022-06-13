@@ -49,15 +49,8 @@ const questions =
     {
         type: "input",
         name: "steps",
-        message: "What are the steps required to install your project? (Required)",
-        validate: stepsInput => {
-            if(stepsInput) {
-                return true;
-            } else {
-                console.log("Please enter the steps a user needs to take to install your project!");
-                return false;
-            }
-        }
+        message: "What are the steps required to install your project?",
+        default: "No specialized instructions required."
     },
     {
         type: "input",
@@ -94,6 +87,7 @@ const questions =
         type: "input",
         name: "collaborators",
         message: "Please list any collaborators on your project.",
+        default: "None"
     },
     {
         type: "list",

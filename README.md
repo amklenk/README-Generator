@@ -28,6 +28,7 @@ npm install
 The .gitignore file is set up in the root directory along with the index.js file that contains most of the command line code. The utils folder contains the generateMarkdown file, which contains the template for the README file and the module_export to index.js. The dist folder will contain the generated README.
 
 ## Links
+//NEEDS SCREENSHOTS
 - [GitHub Repository](https://github.com/amklenk/README-Generator)
 
 ## Usage
@@ -51,10 +52,10 @@ Inquirer Data
 name: 'amklenk',
 title: 'Workout Zen',
   description: 'This application was designed to help someone new to exercising learn new exercises in a low stress environment.',
-  steps: 'Visit the GitHub repository, Workout-Zen (see the link below), to fork and clone the repository. The site is published on GitHub pages',
+  steps: 'Visit the GitHub repository, Workout-Zen (see the link below), to fork and clone the repository. The site is published on GitHub pages.',
   github: 'https://github.com/amklenk/Workout-Zen',
   site: 'https://amklenk.github.io/Workout-Zen/',
-  usage: 'The site is navigable via clicking the muscle buttons, each exercise, and the go back button to return to the index page. Each exercise has a heart, which when clicked, allows the user to save the exercise as a favorite to the favorite's section using local storage. The user can then press the clear button to clear the exercises and local storage.',
+  usage: 'The site is navigable via clicking the muscle buttons, each exercise, and the go back button to return to the index page. Each exercise has a heart, which when clicked, allows the user to save the exercise as a favorite to the favorite section using local storage. The user can then press the clear button to clear the exercises and local storage.',
   collaborators: 'Mtende Roll, Hannah Nicks, Colin Alexander',
   license: 'MIT',
   contribution: 'Please fork and clone the repository and use a pull request to add or make changes to the current repository.'

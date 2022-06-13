@@ -54,6 +54,15 @@ function renderLicenseSection(license) {
 - ${renderLicenseLink(license)}`;
 }
 
+function renderPageLink(site) {
+  if (site === " ") {
+    return " "
+  } else {
+    return `- [Page Link](${site})
+    `
+  }
+}
+
 // TODO: Create a function to generate markdown for README
 //this is like the template.js in portfolio-generator
 function generateMarkdown(data) {
@@ -81,7 +90,7 @@ ${readme.steps}
   
 ## Links
 - [GitHub Repository](${readme.github})
-- [Page Link](${readme.site})
+${renderPageLink(readme.site)}
   
 ## Usage
 ${readme.usage}
