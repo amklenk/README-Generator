@@ -152,18 +152,12 @@ function writeToFile(fileName, data) {
 //function that deploys inquirer
 function init() {
     inquirer.prompt(questions)
-    .then(answers=> {
-        return generateMarkdown(answers);
-    })
-    .then((answers)=>{
-        var data = answers;
-        var fileName = "README.md";
+    .then(answers => {
         console.log("Your README has been created in the dist folder!")
-        return writeToFile(fileName, data);
+        writeToFile("README.md", generateMarkdown(answers))
     })
-.catch(err => {
-    console.log(err);
-  });
+    .catch(err =>
+        console.log(err));
 }
 
 // function call

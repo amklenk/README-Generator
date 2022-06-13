@@ -66,11 +66,10 @@ function renderPageLink(site) {
 // TODO: Create a function to generate markdown for README
 //this is like the template.js in portfolio-generator
 function generateMarkdown(data) {
-  const { license, ...readme } = data;
-
+var readme = data;
   return `
 
-# ${readme.title}    ${renderLicenseBadge(license)}
+# ${readme.title}    ${renderLicenseBadge(readme.license)}
 
 ## Description
 ${readme.description}
@@ -99,7 +98,7 @@ ${readme.usage}
 - Collaborators: ${readme.collaborators}
 
 ## License
-${renderLicenseSection(license)}
+${renderLicenseSection(readme.license)}
 
 ## How to Contribute
 ${readme.contribution} 
