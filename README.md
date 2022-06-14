@@ -59,18 +59,3 @@ Please fork and clone the repository and use a pull request to add or make chang
 ## Questions
 Please direct any questions to amandamklenk3@gmail.com. To see more projects, visit the link below for amklenk's respository: 
 - [GitHub Repository](https://github.com/amklenk)
-
-
-
-Inquirer Data
-name: 'amklenk',
-title: 'Workout Zen',
-  description: 'This application was designed to help someone new to exercising learn new exercises in a low stress environment.',
-  steps: 'Visit the GitHub repository, Workout-Zen (see the link below), to fork and clone the repository. The site is published on GitHub pages.',
-  github: 'https://github.com/amklenk/Workout-Zen',
-  site: 'https://amklenk.github.io/Workout-Zen/',
-  usage: 'The site is navigable via clicking the muscle buttons, each exercise, and the go back button to return to the index page. Each exercise has a heart, which when clicked, allows the user to save the exercise as a favorite to the favorite section using local storage. The user can then press the clear button to clear the exercises and local storage.',
-  collaborators: 'Mtende Roll, Hannah Nicks, Colin Alexander',
-  license: 'MIT',
-  contribution: 'Please fork and clone the repository and use a pull request to add or make changes to the current repository.'
-  email: 'amandamklenk3@gmail.com'
