@@ -31,6 +31,7 @@ The .gitignore file is set up in the root directory along with the index.js file
 
 ## Links
 - [GitHub Repository](https://github.com/amklenk/README-Generator)
+- [Walthrough Video Link](https://drive.google.com/file/d/1i5xFJKN0a6QwdLYWY_7-9pL21kCOujBS/view)
 
 ## Usage
 The following images are project screenshots.
